@@ -148,10 +148,8 @@ nav {
     background-color: #333;
     padding: 20px;
     border-radius: 8px;
-    text-align: center;
-    width: 200px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    margin: 10px 0;
+    text-align: center;
 }
 
 .step-icon {
@@ -178,14 +176,11 @@ nav {
     }
 
     .steps {
-        flex-direction: column;  /* Stack steps vertically on mobile */
-        align-items: center;  /* Center align for mobile */
         gap: 20px;
-        padding: 0 10px;  /* Prevent overflow */
+        grid-template-columns: 1fr;  /* Stack cards vertically on smaller screens */
     }
 
     .step {
-        width: 100%;  /* Allow the steps to take full width on mobile */
         padding: 15px;
     }
 
