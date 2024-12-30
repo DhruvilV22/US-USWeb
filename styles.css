@@ -134,15 +134,17 @@ nav {
     color: #fff;
     padding: 4rem 1rem;
     text-align: center;
-    box-sizing: border-box; /* Ensure padding does not cause overflow */
+    box-sizing: border-box;
 }
 
 .steps {
-    display: grid;
-    gap: 40px;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    justify-content: center;
-    max-width: 100%; /* Prevent overflow */
+    display: flex;
+    justify-content: space-between;  /* Spread out the steps */
+    gap: 30px;  /* Space between steps */
+    flex-wrap: wrap;  /* Allow wrapping on smaller screens */
+    margin: 0 auto;
+    max-width: 100%;
+    padding: 0 10px; /* Prevent overflow */
 }
 
 .step {
@@ -150,7 +152,9 @@ nav {
     padding: 20px;
     border-radius: 8px;
     text-align: center;
+    width: 200px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    margin: 10px 0;
 }
 
 .step-icon {
@@ -177,12 +181,14 @@ nav {
     }
 
     .steps {
+        flex-direction: column;  /* Stack steps vertically on mobile */
+        align-items: center;  /* Center align for mobile */
         gap: 20px;
-        grid-template-columns: 1fr;  /* Stack steps vertically on smaller screens */
-        padding: 0 10px;  /* Add slight padding to prevent overflow */
+        padding: 0 10px;  /* Prevent overflow */
     }
 
     .step {
+        width: 100%;  /* Allow the steps to take full width on mobile */
         padding: 15px;
     }
 
@@ -198,35 +204,6 @@ nav {
         font-size: 14px;
     }
 }
-
-/* Media Queries for Mobile Responsiveness */
-@media (max-width: 768px) {
-    #how-it-works {
-        padding: 3rem 1rem;
-    }
-
-    .steps {
-        gap: 20px;
-        grid-template-columns: 1fr;  /* Stack steps vertically on smaller screens */
-    }
-
-    .step {
-        padding: 15px;
-    }
-
-    .step-icon {
-        font-size: 35px;
-    }
-
-    .step h3 {
-        font-size: 22px;
-    }
-
-    .step p {
-        font-size: 14px;
-    }
-}
-
 
 /* Why Choose Us Section */
 #why-choose-us {
