@@ -146,6 +146,7 @@ nav {
     justify-content: center;
     padding: 0 20px; /* Prevents overflow */
     max-width: 100%;
+    margin: 0 auto; /* Centers the grid */
 }
 
 /* Step Card */
@@ -184,6 +185,7 @@ nav {
     .steps {
         gap: 20px;
         grid-template-columns: 1fr; /* Stack cards vertically on smaller screens */
+        margin: 0 auto; /* Centers the grid on mobile */
     }
 
     .step {
@@ -202,7 +204,6 @@ nav {
         font-size: 14px;
     }
 }
-
 
 /* Why Choose Us Section */
 #why-choose-us {
