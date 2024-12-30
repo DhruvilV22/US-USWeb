@@ -134,23 +134,21 @@ nav {
     color: #fff;
     padding: 4rem 1rem;
     text-align: center;
-    box-sizing: border-box; /* Prevent width issues */
+    box-sizing: border-box;
     overflow: hidden; /* Prevent overflowing content */
 }
 
-
+/* Steps Grid */
 .steps {
-        display: grid;
-        gap: 40px;
-        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* Dynamic grid with wrapping */
-        justify-content: center;
-        padding: 0 10px; /* Add padding to avoid overflow */
-        box-sizing: border-box; /* Prevent padding from causing overflow */
-        max-width: 100%;
-        overflow-x: hidden; /* Prevent horizontal overflow */
+    display: grid;
+    gap: 40px;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* Ensures responsive grid layout */
+    justify-content: center;
+    padding: 0 20px; /* Prevents overflow */
+    max-width: 100%;
 }
 
-
+/* Step Card */
 .step {
     background-color: #333;
     padding: 20px;
@@ -159,6 +157,7 @@ nav {
     text-align: center;
 }
 
+/* Icons, headings, and text in the steps */
 .step-icon {
     font-size: 40px;
     color: #ff8000;
@@ -179,12 +178,12 @@ nav {
 /* Media Queries for Mobile Responsiveness */
 @media (max-width: 768px) {
     #how-it-works {
-        padding: 3rem 1rem;
+        padding: 3rem 1rem; /* Adjust padding for mobile */
     }
 
     .steps {
         gap: 20px;
-        grid-template-columns: 1fr;  /* Stack cards vertically on smaller screens */
+        grid-template-columns: 1fr; /* Stack cards vertically on smaller screens */
     }
 
     .step {
@@ -203,6 +202,7 @@ nav {
         font-size: 14px;
     }
 }
+
 
 /* Why Choose Us Section */
 #why-choose-us {
