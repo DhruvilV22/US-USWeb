@@ -6,75 +6,25 @@ body {
     color: #333;
     background: #f9f9f9;
     line-height: 1.6;
+    position: relative;
 }
 
-/* Navbar */
-.navbar {
-    background: #004080;
-    color: #fff;
-    padding: 1rem 2rem;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    position: sticky;
+/* Background Image */
+.background-image {
+    background-image: url('./images/bg.jpg');
+    background-size: cover;
+    background-position: center;
+    height: 100vh;
+    position: absolute;
     top: 0;
-    z-index: 1000;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
-}
-
-.navbar .logo {
-    display: flex;
-    align-items: center;
-}
-
-.navbar .logo-img {
-    width: 40px;
-    height: 40px;
-    margin-right: 10px;
-}
-
-.navbar .logo span {
-    font-size: 1.5rem;
-    font-weight: bold;
-}
-
-.nav-links {
-    list-style: none;
-    display: flex;
-    margin: 0;
-}
-
-.nav-links li {
-    margin-left: 20px;
-}
-
-.nav-links a {
-    color: #fff;
-    text-decoration: none;
-    font-weight: bold;
-    transition: color 0.3s ease;
-}
-
-.nav-links a:hover {
-    color: #ff8000;
-}
-
-/* Mobile Menu */
-.menu-toggle {
-    display: none;
-    flex-direction: column;
-    cursor: pointer;
-}
-
-.menu-toggle .bar {
-    width: 25px;
-    height: 3px;
-    margin: 5px;
-    background-color: #fff;
+    left: 0;
+    right: 0;
+    z-index: -1;
 }
 
 /* Hero Section */
 .hero {
+    position: relative;  /* Make the hero section the reference point for positioning */
     height: 100vh;
     background: url('./images/bg.jpg') no-repeat center center/cover;
     display: flex;
@@ -85,6 +35,20 @@ body {
     text-shadow: 0 4px 6px rgba(0, 0, 0, 0.5);
 }
 
+/* Logo positioning */
+.hero .logo {
+    position: absolute;
+    top: 20px;  /* Adjust the distance from the top of the hero section */
+    left: 20px; /* Position the logo to the left of the screen */
+    z-index: 10;  /* Ensure it stays above other content */
+}
+
+.hero .logo img {
+    width: 80px;  /* Adjust the size of the logo to make it smaller */
+    height: auto; /* Ensure the aspect ratio is preserved */
+}
+
+/* Hero Content Styling */
 .hero-content {
     padding: 2rem;
     background: rgba(0, 0, 0, 0.5);
@@ -118,8 +82,50 @@ body {
     background: #cc6600;
 }
 
-/* Section Styles */
+
+/* Navbar */
+nav {
+    background-color: #004080; /* Keep your desired navbar background color */
+    padding: 1rem 2rem;
+    display: flex;
+    justify-content: center;  /* Center the navigation links */
+    align-items: center;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+/* Make sure the nav-links are centered in the nav bar */
+.nav-links {
+    list-style: none;
+    display: flex;
+    margin: 0;
+}
+
+.nav-links li {
+    margin-left: 20px;
+}
+
+.nav-links a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s ease;
+}
+
+.nav-links a:hover {
+    color: #ff8000;
+}
+
+/* Ensure other sections are not affected by navbar's centering styles */
+body {
+    margin: 0;
+    padding: 0;
+}
+
 .section {
+    /* Your section-specific styles here */
     padding: 4rem 1rem;
     text-align: center;
     background: #f9f9f9;
@@ -129,24 +135,95 @@ body {
     background: #eef5ff;
 }
 
-.cards, .steps-container, .destinations-grid {
-    display: grid;
-    gap: 2rem;
-    margin-top: 2rem;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+
+/* How It Works Section */
+#how-it-works {
+    background-color: #000;
+    color: #fff;
 }
 
-.card, .step, .destination-card {
-    background: white;
-    padding: 1.5rem;
-    border-radius: 15px;
+.steps {
+    display: flex;
+    gap: 30px;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.step {
+    background-color: #333;
+    padding: 20px;
+    border-radius: 8px;
+    text-align: center;
+    width: 200px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-.card:hover, .step:hover, .destination-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.2);
+.step-icon {
+    font-size: 40px;
+    color: #ff8000;
+    margin-bottom: 10px;
+}
+
+.step h3 {
+    font-size: 24px;
+    color: #fff;
+    margin-bottom: 10px;
+}
+
+.step p {
+    font-size: 16px;
+    color: #ccc;
+}
+
+/* Why Choose Us Section */
+#why-choose-us {
+    background-color: #000;
+    color: #fff;
+}
+
+.cards {
+    display: grid;
+    gap: 40px;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    justify-content: center;
+}
+
+.card {
+    background-color: #333;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+.card-icon {
+    font-size: 40px;
+    color: #ff8000;
+    margin-bottom: 10px;
+}
+
+.card h3 {
+    font-size: 24px;
+    color: #fff;
+    margin-bottom: 10px;
+}
+
+.card p {
+    font-size: 16px;
+    color: #ccc;
+}
+
+/* Popular Destinations Section */
+#popular-destinations {
+    background-color: #000;
+    color: #fff;
+}
+
+.destinations-grid {
+    display: grid;
+    gap: 20px;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    justify-content: center;
 }
 
 /* Destination Cards */
@@ -155,34 +232,46 @@ body {
     background-position: center;
     color: white;
     display: flex;
-    align-items: flex-end;
-    justify-content: center;
-    height: 200px;
+    align-items: center; /* Vertically center the content */
+    justify-content: center; /* Horizontally center the content */
+    height: 200px; /* Adjust height as needed */
     text-shadow: 0 2px 4px rgba(0, 0, 0, 0.6);
+    position: relative; /* Ensure the text is positioned correctly */
 }
 
-/* Why Choose Us Section */
-.section-description {
-    margin-top: -1rem;
-    font-size: 1rem;
-    color: #555;
-    max-width: 600px;
-    margin-left: auto;
-    margin-right: auto;
-    margin-bottom: 2rem;
+.destination-card h3 {
+    font-size: 2rem; /* Adjust size of the text */
+    text-align: center;
+    margin: 0;
 }
 
-.card-icon {
-    font-size: 2.5rem;
-    color: #004080;
-    margin-bottom: 1rem;
+/* Floating Call Button */
+.floating-button {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: #ff8000;
+    border-radius: 25px;  /* Adjusted for pill shape */
+    padding: 12px 30px;  /* Adjusted for pill shape */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    z-index: 999;
+    font-weight: bold;
+    color: white;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: transform 0.3s, background 0.3s;
 }
 
-/* How It Works Section */
-.step-icon {
-    font-size: 2.5rem;
-    color: #004080;
-    margin-bottom: 1rem;
+.floating-button:hover {
+    transform: scale(1.1);
+    background: #cc6600;
+}
+
+.call-button img {
+    width: 30px;
+    height: 30px;
 }
 
 /* Footer Styles */
@@ -194,13 +283,14 @@ footer {
 }
 
 .footer-logo-img {
-    width: 50px;
-    height: 50px;
+    width: 100px;  /* Increased logo size */
+    height: 100px; /* Increased logo size */
     margin-bottom: 1rem;
 }
 
 .footer-text p {
     margin: 10px 0;
+    font-size: 12px;  /* Decreased font size for copyright text */
 }
 
 .social-links {
@@ -208,81 +298,16 @@ footer {
 }
 
 .social-icon {
-    color: white;
-    text-decoration: none;
+    display: inline-block;
     margin: 0 10px;
-    font-weight: bold;
-    font-size: 1.2rem;
-    transition: color 0.3s ease;
-}
-
-.social-icon:hover {
-    color: #ff8000;
-}
-
-/* Floating Call Now Button */
-.floating-button {
-    position: fixed;
-    bottom: 20px;
-    right: 20px;
-    background: #ff8000;
-    color: #fff;
-    padding: 1rem 1.5rem;
-    border-radius: 50%;
-    font-size: 1.5rem;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
-    text-decoration: none;
     transition: transform 0.3s ease;
 }
 
-.floating-button:hover {
-    transform: scale(1.1);
+.social-icon:hover {
+    transform: scale(1.2);
 }
 
-/* Footer Links */
-footer .footer-content {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-}
-
-footer .footer-content .social-links {
-    display: flex;
-    gap: 15px;
-    justify-content: center;
-}
-
-footer .footer-content .footer-logo {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin-bottom: 1rem;
-}
-
-/* Mobile Menu Styles */
-@media screen and (max-width: 768px) {
-    .nav-links {
-        display: none;
-        width: 100%;
-        position: absolute;
-        top: 80px;
-        left: 0;
-        background: #004080;
-        padding: 1rem;
-        flex-direction: column;
-        align-items: center;
-    }
-
-    .nav-links.active {
-        display: flex;
-    }
-
-    .nav-links li {
-        margin: 10px 0;
-    }
-
-    .menu-toggle {
-        display: flex;
-    }
+.social-img {
+    width: 30px;  /* Set the desired width for your icons */
+    height: 30px; /* Set the desired height for your icons */
 }
