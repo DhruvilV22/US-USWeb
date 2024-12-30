@@ -143,9 +143,12 @@ nav {
     gap: 30px;  /* Space between steps */
     flex-wrap: wrap;  /* Allow wrapping on smaller screens */
     margin: 0 auto;
-    max-width: 100%;
+    max-width: 100%;  /* Ensure no overflow */
     padding: 0 10px; /* Prevent overflow */
+    box-sizing: border-box; /* Ensure padding doesn't cause overflow */
+    overflow: hidden; /* Prevent items from going out of the viewport */
 }
+
 
 .step {
     background-color: #333;
