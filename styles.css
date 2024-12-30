@@ -239,10 +239,10 @@ nav {
     right: 20px;
     background-color: #ff8000;
     color: #fff;
-    padding: 0.8rem 1.5rem;  /* Matching the padding from hero section */
-    border-radius: 25px;      /* Matching the border-radius */
-    font-size: 1.2rem;        /* Slightly smaller font size to match */
-    font-weight: bold;        /* Same font weight as the hero button */
+    padding: 0.8rem 1.5rem;
+    border-radius: 25px;
+    font-size: 1.2rem;
+    font-weight: bold;
     text-align: center;
     display: inline-block;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
@@ -251,11 +251,9 @@ nav {
 }
 
 .floating-button:hover {
-    transform: scale(1.05);    /* Slightly smaller hover effect */
-    background: #cc6600;       /* Matching the hover background */
+    transform: scale(1.05);
+    background: #cc6600;
 }
-
-
 
 /* Footer */
 footer {
@@ -301,5 +299,12 @@ footer {
 
     .steps {
         flex-direction: column;
+    }
+
+    .floating-button {
+        font-size: 1rem;  /* Smaller font size */
+        padding: 0.6rem 1rem;  /* Smaller padding for mobile */
+        bottom: 15px;  /* Adjusted bottom distance */
+        right: 15px;  /* Adjusted right distance */
     }
 }
