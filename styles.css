@@ -134,13 +134,20 @@ nav {
     color: #fff;
     padding: 4rem 1rem;
     text-align: center;
+    box-sizing: border-box; /* Prevent width issues */
+    overflow: hidden; /* Prevent overflowing content */
 }
 
+
 .steps {
-    display: grid;
-    gap: 40px;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    justify-content: center;
+        display: grid;
+        gap: 40px;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* Dynamic grid with wrapping */
+        justify-content: center;
+        padding: 0 10px; /* Add padding to avoid overflow */
+        box-sizing: border-box; /* Prevent padding from causing overflow */
+        max-width: 100%;
+        overflow-x: hidden; /* Prevent horizontal overflow */
 }
 
 
