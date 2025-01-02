@@ -139,6 +139,9 @@ nav {
     background-color: #004080;
     position: relative;
     width: 100%;
+    box-sizing: border-box; /* Prevents navbar from overflowing */
+    z-index: 1000;
+    margin: 0;
 }
 
 /* Logo Styling */
@@ -263,7 +266,6 @@ nav {
     top: 50%;
     transform: translateY(-50%);  /* Center hamburger vertically */
 }
-
 
 /* Why Choose Us Section */
 #why-choose-us {
