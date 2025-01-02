@@ -190,11 +190,12 @@ nav {
         display: none;
         flex-direction: column;
         position: absolute;
-        top: 60px; /* Position the links below the navbar */
+        top: 0px; /* Position the links below the navbar */
         left: 0;
         right: 0;
         background-color: #004080;
         width: 100%;
+        height: auto;
         text-align: center;
         box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
         z-index: 999;
@@ -249,7 +250,7 @@ nav {
 /* Fix partition issue when hamburger is open */
 .nav-links.active {
     position: absolute;
-    top: 60px; /* Ensure the menu starts directly below the navbar */
+    top: 0px; /* Ensure the menu starts directly below the navbar */
     left: 0;
     right: 0;
     background-color: #004080; /* Keep the navbar background color */
