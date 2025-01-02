@@ -163,34 +163,27 @@ nav {
 /* Mobile Navigation Styles */
 @media (max-width: 768px) {
     nav {
-        padding: 0.5rem 1rem;
+        display: flex;
         justify-content: space-between;  /* Space between logo and hamburger */
+        align-items: center;
+        padding: 0.5rem 1rem;
+        background-color: #004080;
+        position: relative;
+        height: 60px;  /* Set consistent height for the navbar */
     }
 
     /* Logo on mobile */
     .logo {
         position: absolute;
-        left: 10px;
+        left: 15px;
         top: 50%;
         transform: translateY(-50%);
+        z-index: 1000;  /* Ensure it stays above the nav links */
     }
 
-    .nav-links {
-        display: none;
-        flex-direction: column;
-        position: absolute;
-        top: 60px;
-        left: 0;
-        right: 0;
-        background-color: #004080;
-        width: 100%;
-        text-align: center;
-        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
-        z-index: 999;
-    }
-
-    .nav-links li {
-        margin: 15px 0;
+    .logo img {
+        width: 50px; /* Adjust the logo size */
+        height: auto;
     }
 
     /* Hamburger Icon */
@@ -213,7 +206,26 @@ nav {
         transition: 0.4s;
     }
 
-    /* When hamburger is active, show the menu */
+    /* Nav links hidden by default */
+    .nav-links {
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        top: 60px;  /* Position the menu below the navbar */
+        left: 0;
+        right: 0;
+        background-color: #004080;
+        width: 100%;
+        text-align: center;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+        z-index: 999;
+    }
+
+    .nav-links li {
+        margin: 15px 0;  /* Space out the links vertically */
+    }
+
+    /* When hamburger is active, show the nav links */
     .nav-links.active {
         display: flex;
     }
