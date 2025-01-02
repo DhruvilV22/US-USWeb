@@ -136,25 +136,19 @@ nav {
     justify-content: space-between;
     align-items: center;
     padding: 1rem 2rem;
-    background-color: #004080; /* Blue color for navbar */
+    background-color: #004080;
     position: relative;
-    z-index: 1000; /* Ensure navbar is above everything */
-    width: 100%;  /* Ensure navbar spans the full width */
-    background-image: none; /* Remove background image if any, to avoid partition */
+    width: 100%; /* Ensure the navbar spans the entire screen */
 }
 
 /* Logo Styling */
-.logo {
-    display: flex;  /* Ensure logo container is treated as a flex item */
-    justify-content: center;
-    align-items: center;
-    z-index: 1001;  /* Ensure logo stays above other elements */
-    position: relative;
-}
-
 .logo img {
     width: 50px;  /* Adjust logo size */
     height: auto;
+    position: absolute;  /* Fix logo inside the navbar */
+    left: 20px;  /* Position logo at the left */
+    top: 50%;
+    transform: translateY(-50%);  /* Center logo vertically */
 }
 
 /* Navbar Links */
@@ -162,8 +156,10 @@ nav {
     list-style: none;
     display: flex;
     margin: 0;
+    padding: 0;
 }
 
+/* Styling for each navbar item */
 .nav-links li {
     margin-left: 20px;  /* Adjust spacing between links */
 }
@@ -184,46 +180,35 @@ nav {
 @media (max-width: 768px) {
     nav {
         padding: 0.5rem 1rem;
-        justify-content: flex-start; /* Align the content to the left */
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
     }
 
-    .logo {
-        position: absolute;
-        top: 50%;
-        left: 10px; /* Adjust this for spacing */
-        transform: translateY(-50%); /* Vertically center logo */
-    }
-
+    /* Hide the links initially, and show when active */
     .nav-links {
-        display: none;  /* Hide links on mobile */
-        flex-direction: column;  /* Stack links vertically */
+        display: none;
+        flex-direction: column;
         position: absolute;
-        top: 60px;  /* Adjust this if there's space between navbar and links */
+        top: 60px;
         left: 0;
         right: 0;
-        background-color: #004080; /* Ensure the background color is consistent */
+        background-color: #004080;
         width: 100%;
         text-align: center;
         box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
         z-index: 999;
-        margin-top: 10px;
     }
 
     .nav-links li {
-        margin: 10px 0;  /* Space links vertically */
+        margin: 10px 0;  /* Vertical margin for the links */
     }
 
-    /* Align links in the center */
-    .nav-links.active {
-        display: flex;  /* Show links when active */
-    }
-
-    /* Ensure the hamburger is visible on mobile and positioned to the right */
+    /* Show hamburger icon on mobile */
     .hamburger {
-        display: block;  /* Make it visible on mobile */
-        margin-left: auto;  /* Push hamburger to the right */
+        display: block;  
         cursor: pointer;
-        z-index: 1100;  /* Ensure it stays above other elements */
+        z-index: 1100;
     }
 
     .hamburger span {
@@ -235,10 +220,15 @@ nav {
         transition: 0.4s;
     }
 
-    /* Active class to display nav links when hamburger is clicked */
+    /* When the hamburger menu is active, display the links */
     .nav-links.active {
-        display: flex;  /* Show links */
+        display: flex;
     }
+}
+
+/* Active class to display nav links when hamburger is clicked */
+.nav-links.active {
+    display: flex;
 }
 
 /* Animation for Hamburger icon */
@@ -254,6 +244,26 @@ nav {
 .hamburger.active span:nth-child(3) {
     transform: rotate(-45deg);
     transform-origin: 10% 90%;
+}
+
+/* Fix partition issue when hamburger is open */
+.nav-links.active {
+    position: absolute;
+    top: 60px;  /* Ensure the menu starts below the navbar */
+    left: 0;
+    right: 0;
+    background-color: #004080;  /* Make sure the navbar background color is maintained */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+}
+
+/* Ensure logo is not affected by hamburger */
+@media (max-width: 768px) {
+    .logo {
+        position: absolute;
+        top: 50%;
+        left: 20px;
+        transform: translateY(-50%);
+    }
 }
 
 /* Why Choose Us Section */
