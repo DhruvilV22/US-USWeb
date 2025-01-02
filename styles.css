@@ -21,6 +21,7 @@ body {
     height: 100%;
     z-index: -1;
     opacity: 0.8;
+    filter: brightness(0.5);
 }
 
 /* Hero Section */
@@ -202,17 +203,16 @@ nav {
 /* Media Queries for Mobile Responsiveness */
 @media (max-width: 768px) {
     #how-it-works {
-        padding: 3rem 1rem; /* Adjust padding for mobile */
+        padding: 3rem 1rem;
     }
 
     .steps {
         gap: 20px;
-        grid-template-columns: 1fr; /* Stack cards vertically on smaller screens */
-        margin: 0 auto; /* Centers the grid on mobile */
+        grid-template-columns: 1fr;
     }
 
     .step {
-        padding: 15px;
+         padding: 15px;
     }
 
     .step-icon {
