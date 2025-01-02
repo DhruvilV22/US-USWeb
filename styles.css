@@ -118,25 +118,24 @@ body {
 /* General Navbar Styles */
 nav {
     display: flex;
-    justify-content: space-between;  /* Ensures space between logo and links */
+    justify-content: space-between; /* Ensures space between logo and links */
     align-items: center;
     padding: 1rem 2rem;
-    background-color: #004080;  /* Blue background */
+    background-color: #004080;
     position: fixed;
     top: 0;
     left: 0;
     width: 100%;
-    z-index: 1000;  /* Ensures navbar stays on top */
+    z-index: 1000;
 }
 
-/* Logo Styles */
+/* Logo Styling */
 .logo img {
-    width: 50px;
+    width: 50px;  /* Adjust logo size */
     height: auto;
-    z-index: 1100;
 }
 
-/* Navbar Links - Desktop view */
+/* Navbar Links - Desktop View */
 .nav-links {
     list-style: none;
     display: flex;
@@ -165,9 +164,17 @@ nav {
 @media (max-width: 768px) {
     nav {
         padding: 0.5rem 1rem;
+        justify-content: space-between;  /* Space between logo and hamburger */
     }
 
-    /* Hide the links initially */
+    /* Logo on mobile */
+    .logo {
+        position: absolute;
+        left: 10px;
+        top: 50%;
+        transform: translateY(-50%);
+    }
+
     .nav-links {
         display: none;
         flex-direction: column;
