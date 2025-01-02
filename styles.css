@@ -211,11 +211,11 @@ nav {
     /* Hamburger Icon */
     .hamburger {
         display: block;
+        justify-content: flex-end;
         cursor: pointer;
-        z-index: 1100;
-        position: absolute;
+        position: fixed;
         left: 360px;
-        top: 50%;
+        top: 8%;
         transform: translateY(-50%);
     }
 
