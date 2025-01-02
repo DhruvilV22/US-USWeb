@@ -19,4 +19,5 @@ document.addEventListener('DOMContentLoaded', () => {
             floatingButton.classList.remove('show');
         }
     });
+    
 });
