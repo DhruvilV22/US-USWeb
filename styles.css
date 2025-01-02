@@ -84,39 +84,36 @@ body {
     background: #cc6600;
 }
 
-/* Floating Call Button */
 .floating-button {
     position: fixed;
     bottom: 20px;
     right: 20px;
-    background: #ff8000;
+    background-color: #ff8000; /* Match button color with hero section */
     color: #fff;
-    padding: 0.8rem 1.5rem;
-    border-radius: 25px;
+    border-radius: 30px; /* More rounded to match hero button style */
+    padding: 12px 30px;  /* Adjusted padding for a more button-like appearance */
+    font-size: 1.2rem;    /* Adjust font size to look consistent with hero section */
     font-weight: bold;
-    font-size: 1.2rem;
-    text-decoration: none;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
-    transition: transform 0.3s, background 0.3s;
-    text-align: center;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+    cursor: pointer;
+    opacity: 0;  /* Hidden by default */
+    transition: opacity 0.3s ease, transform 0.3s ease; /* Smooth transition */
+    z-index: 1000;
 }
 
-/* Hover Effect */
-.floating-button:hover {
-    transform: scale(1.1);
-    background: #cc6600;
+/* Show the floating button when it gets the "show" class */
+.floating-button.show {
+    opacity: 1;
+    transform: translateY(0); /* Make sure it pops up smoothly */
 }
 
-/* Media Query for Mobile Devices */
+/* Make button smaller on mobile devices */
 @media (max-width: 768px) {
     .floating-button {
-        padding: 0.6rem 1.2rem;  /* Smaller padding */
-        font-size: 1rem;  /* Smaller font size */
-        bottom: 15px;  /* Reduce bottom space */
-        right: 15px;  /* Reduce right space */
+        padding: 10px 20px;   /* Adjust padding on mobile */
+        font-size: 1rem;      /* Adjust font size on mobile */
     }
 }
-
 
 /* Navbar */
 nav {
@@ -131,6 +128,22 @@ nav {
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
     width: 100%;  /* Ensure the navbar spans the entire width of the screen */
     box-sizing: border-box;  /* Prevents padding from affecting the overall width */
+}
+
+/* Navbar Styling */
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 2rem;
+    background-color: #004080;
+    position: relative;
+}
+
+/* Logo Styling */
+.logo img {
+    width: 50px;  /* Adjust logo size */
+    height: auto;
 }
 
 /* Navbar Links */
@@ -148,7 +161,7 @@ nav {
     color: #fff;
     text-decoration: none;
     font-weight: bold;
-    font-size: 1rem;  /* Adjust font size */
+    font-size: 1rem;
     transition: color 0.3s ease;
 }
 
@@ -156,42 +169,64 @@ nav {
     color: #ff8000;
 }
 
-/* Logo Styling */
-.logo img {
-    width: 50px;  /* Adjust logo size */
-    height: auto;
-}
-
-/* For smaller screens, the navbar should still stay compact */
+/* For smaller screens, make navbar more compact */
 @media (max-width: 768px) {
     nav {
-        padding: 0.5rem 1rem;  /* Reduce padding on smaller screens */
+        padding: 0.5rem 1rem;
     }
 
     .nav-links {
-        display: none;  /* Hide the links on mobile by default */
+        display: none;  /* Hide links on mobile */
         flex-direction: column;  /* Stack links vertically */
         position: absolute;
-        top: 60px;  /* Position the links below the navbar */
+        top: 60px;
+        left: 0;
         right: 0;
         background-color: #004080;
         width: 100%;
         text-align: center;
         box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+        z-index: 999;
     }
 
     .nav-links li {
-        margin: 10px 0;  /* Space out the links vertically */
+        margin: 10px 0;  /* Space links vertically */
     }
 
+    /* Show the hamburger icon */
     .hamburger {
-        display: block;  /* Show the hamburger icon on mobile */
+        display: block;
+        cursor: pointer;
+    }
+
+    /* Hamburger Bars Styling */
+    .hamburger span {
+        width: 30px;
+        height: 5px;
+        background-color: #fff;
+        margin: 6px 0;
+        border-radius: 5px;
     }
 }
 
-/* For when hamburger menu is clicked (to show links) */
+/* Active class to display nav links when hamburger is clicked */
 .nav-links.active {
-    display: flex;  /* Show links when the hamburger is clicked */
+    display: flex;  /* Show links */
+}
+
+/* Animation for Hamburger icon */
+.hamburger.active span:nth-child(1) {
+    transform: rotate(45deg);
+    transform-origin: 10% 10%;
+}
+
+.hamburger.active span:nth-child(2) {
+    opacity: 0;
+}
+
+.hamburger.active span:nth-child(3) {
+    transform: rotate(-45deg);
+    transform-origin: 10% 90%;
 }
 
 
