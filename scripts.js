@@ -1,4 +1,4 @@
-document.addEventListener('DOMContentLoaded', () => {
+document.addEventListener('DOMContentLoaded', () => { 
     const hamburger = document.getElementById('hamburger');
     const navLinks = document.querySelector('.nav-links');
 
@@ -19,5 +19,4 @@ document.addEventListener('DOMContentLoaded', () => {
             floatingButton.classList.remove('show');
         }
     });
-    
 });
