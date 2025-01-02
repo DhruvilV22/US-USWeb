@@ -193,20 +193,45 @@ nav {
         margin: 10px 0;  /* Space links vertically */
     }
 
-    /* Show the hamburger icon */
+    /* Ensure the hamburger is visible on mobile */
+.hamburger {
+    display: none;  /* Hidden by default */
+    cursor: pointer;
+    z-index: 1100;  /* Ensure it stays above other elements */
+}
+
+.hamburger span {
+    display: block;
+    width: 30px;
+    height: 3px;
+    background-color: #fff;
+    margin: 6px 0;
+    transition: 0.4s;
+}
+
+/* For smaller screens, show the hamburger */
+@media (max-width: 768px) {
     .hamburger {
-        display: block;
-        cursor: pointer;
+        display: block;  /* Make it visible on mobile */
     }
 
-    /* Hamburger Bars Styling */
-    .hamburger span {
-        width: 30px;
-        height: 5px;
-        background-color: #fff;
-        margin: 6px 0;
-        border-radius: 5px;
+    .nav-links {
+        display: none;  /* Hide nav links by default on mobile */
+        flex-direction: column;
+        position: absolute;
+        top: 60px;  /* Position the links below the navbar */
+        right: 0;
+        background-color: #004080;
+        width: 100%;
+        text-align: center;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
     }
+
+    .nav-links.active {
+        display: flex;  /* Show the links when active */
+    }
+}
+
 }
 
 /* Active class to display nav links when hamburger is clicked */
