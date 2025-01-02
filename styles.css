@@ -86,6 +86,7 @@ body {
 
 .floating-button {
     position: fixed;
+    text-decoration: none;
     bottom: 20px;
     right: 20px;
     background-color: #ff8000; /* Match button color with hero section */
@@ -107,11 +108,22 @@ body {
     transform: translateY(0); /* Make sure it pops up smoothly */
 }
 
-/* Make button smaller on mobile devices */
+/* Mobile-specific styling for the floating button */
 @media (max-width: 768px) {
     .floating-button {
-        padding: 10px 20px;   /* Adjust padding on mobile */
-        font-size: 1rem;      /* Adjust font size on mobile */
+        font-size: 24px;  /* Adjust font size for mobile */
+        padding: 12px 15px; /* Adjust padding */
+    }
+
+    /* Add phone emoji using ::before */
+    .floating-button::before {
+        content: '📞';  /* Phone emoji */
+        font-size: 24px; /* Adjust emoji size */
+    }
+
+    /* Hide any existing text in the button */
+    .floating-button span {
+        display: none;
     }
 }
 
@@ -139,9 +151,9 @@ nav {
 .nav-links {
     list-style: none;
     display: flex;
-    margin: 0;
-    padding: 0;
-    margin-left: 500px;  /* Aligns links to the right */
+    margin: 10px;
+    padding: 10px;
+    margin-right: 100px;  /* Aligns links to the right */
 }
 
 .nav-links li {
@@ -163,27 +175,37 @@ nav {
 /* Mobile Navigation Styles */
 @media (max-width: 768px) {
     nav {
-        display: flex;
+        padding: 0.5rem 1rem;
+        height: 60px;
+        width: 100%;
         justify-content: space-between;  /* Space between logo and hamburger */
         align-items: center;
-        padding: 0.5rem 1rem;
-        background-color: #004080;
-        position: relative;
-        height: 60px;  /* Set consistent height for the navbar */
     }
 
     /* Logo on mobile */
     .logo {
         position: absolute;
-        left: 15px;
-        top: 50%;
+        left: 10px;
+        top: 20%;
         transform: translateY(-50%);
-        z-index: 1000;  /* Ensure it stays above the nav links */
     }
 
-    .logo img {
-        width: 50px; /* Adjust the logo size */
-        height: auto;
+    .nav-links {
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        top: 60px;
+        left: -30px;
+        right: 0px;
+        background-color: #004080;
+        width: 100%;
+        text-align: center;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+        z-index: 999;
+    }
+
+    .nav-links li {
+        margin: 15px 0;
     }
 
     /* Hamburger Icon */
@@ -192,7 +214,7 @@ nav {
         cursor: pointer;
         z-index: 1100;
         position: absolute;
-        right: 20px;
+        left: 290px;
         top: 50%;
         transform: translateY(-50%);
     }
@@ -206,26 +228,7 @@ nav {
         transition: 0.4s;
     }
 
-    /* Nav links hidden by default */
-    .nav-links {
-        display: none;
-        flex-direction: column;
-        position: absolute;
-        top: 60px;  /* Position the menu below the navbar */
-        left: 0;
-        right: 0;
-        background-color: #004080;
-        width: 100%;
-        text-align: center;
-        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
-        z-index: 999;
-    }
-
-    .nav-links li {
-        margin: 15px 0;  /* Space out the links vertically */
-    }
-
-    /* When hamburger is active, show the nav links */
+    /* When hamburger is active, show the menu */
     .nav-links.active {
         display: flex;
     }
