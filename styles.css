@@ -208,26 +208,28 @@ nav {
         margin: 15px 0;
     }
 
-    /* Hamburger Icon */
-    .hamburger {
-        display: block;
-        justify-content: flex-end;
+    .hamburger-menu {
+        position: absolute; 
+        left: 360px; 
+        top: 50%; 
+        transform: translateY(-50%); 
         cursor: pointer;
-        position: fixed;
-        left: 360px;
-        top: 8%;
-        transform: translateY(-50%);
-    }
-
-    .hamburger span {
+        z-index: 10; 
+      }
+      
+      .hamburger-menu span {
         display: block;
-        width: 30px;
-        height: 3px;
-        background-color: #fff;
-        margin: 6px 0;
-        transition: 0.4s;
-    }
-
+        width: 30px; 
+        height: 3px; 
+        background-color: #000; 
+        margin: 5px 0; 
+      }
+      @media screen and (max-width: 768px) {
+        .hamburger-menu {
+          right: 10px; /* Adjust spacing for smaller screens */
+        }
+      }
+      
     /* When hamburger is active, show the menu */
     .nav-links.active {
         display: flex;
