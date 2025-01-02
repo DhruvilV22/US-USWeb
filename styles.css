@@ -136,10 +136,11 @@ nav {
     justify-content: space-between;
     align-items: center;
     padding: 1rem 2rem;
-    background-color: #004080;
+    background-color: #004080; /* Blue color for navbar */
     position: relative;
     z-index: 1000; /* Ensure navbar is above everything */
     width: 100%;  /* Ensure navbar spans the full width */
+    background-image: none; /* Remove background image if any, to avoid partition */
 }
 
 /* Logo Styling */
@@ -197,23 +198,32 @@ nav {
         display: none;  /* Hide links on mobile */
         flex-direction: column;  /* Stack links vertically */
         position: absolute;
-        top: 60px;
+        top: 60px;  /* Adjust this if there's space between navbar and links */
         left: 0;
         right: 0;
-        background-color: #004080;
+        background-color: #004080; /* Ensure the background color is consistent */
         width: 100%;
         text-align: center;
         box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
         z-index: 999;
+        margin-top: 10px;
     }
 
     .nav-links li {
         margin: 10px 0;  /* Space links vertically */
     }
 
-    /* Ensure the hamburger is visible on mobile */
+    /* Align links in the center */
+    .nav-links.active {
+        display: flex;  /* Show links when active */
+    }
+
+    /* Ensure the hamburger is visible on mobile and positioned to the right */
     .hamburger {
         display: block;  /* Make it visible on mobile */
+        margin-left: auto;  /* Push hamburger to the right */
+        cursor: pointer;
+        z-index: 1100;  /* Ensure it stays above other elements */
     }
 
     .hamburger span {
@@ -225,14 +235,10 @@ nav {
         transition: 0.4s;
     }
 
+    /* Active class to display nav links when hamburger is clicked */
     .nav-links.active {
-        display: flex;  /* Show links when active */
+        display: flex;  /* Show links */
     }
-}
-
-/* Active class to display nav links when hamburger is clicked */
-.nav-links.active {
-    display: flex;  /* Show links */
 }
 
 /* Animation for Hamburger icon */
@@ -249,7 +255,6 @@ nav {
     transform: rotate(-45deg);
     transform-origin: 10% 90%;
 }
-
 
 /* Why Choose Us Section */
 #why-choose-us {
