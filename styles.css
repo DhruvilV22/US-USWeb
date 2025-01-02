@@ -138,7 +138,7 @@ nav {
     padding: 1rem 2rem;
     background-color: #004080;
     position: relative;
-    width: 100%; /* Ensure the navbar spans the entire screen */
+    width: 100%;
 }
 
 /* Logo Styling */
@@ -193,7 +193,7 @@ nav {
         top: 60px;
         left: 0;
         right: 0;
-        background-color: #004080;
+        background-color: #004080;  /* Ensure the navbar background color is maintained */
         width: 100%;
         text-align: center;
         box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
@@ -206,7 +206,7 @@ nav {
 
     /* Show hamburger icon on mobile */
     .hamburger {
-        display: block;  
+        display: block;
         cursor: pointer;
         z-index: 1100;
     }
@@ -256,15 +256,14 @@ nav {
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
 }
 
-/* Ensure logo is not affected by hamburger */
-@media (max-width: 768px) {
-    .logo {
-        position: absolute;
-        top: 50%;
-        left: 20px;
-        transform: translateY(-50%);
-    }
+/* Ensure the hamburger stays on the right */
+.hamburger {
+    position: absolute;
+    right: 20px;  /* Position hamburger on the right */
+    top: 50%;
+    transform: translateY(-50%);  /* Center hamburger vertically */
 }
+
 
 /* Why Choose Us Section */
 #why-choose-us {
