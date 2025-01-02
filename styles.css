@@ -138,6 +138,7 @@ nav {
     padding: 1rem 2rem;
     background-color: #004080;
     position: relative;
+    z-index: 1000; /* Ensure navbar stays on top */
 }
 
 /* Logo Styling */
@@ -186,7 +187,7 @@ nav {
         width: 100%;
         text-align: center;
         box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
-        z-index: 999;
+        z-index: 999; /* Make sure links are above other content */
     }
 
     .nav-links li {
@@ -194,44 +195,25 @@ nav {
     }
 
     /* Ensure the hamburger is visible on mobile */
-.hamburger {
-    display: none;  /* Hidden by default */
-    cursor: pointer;
-    z-index: 1100;  /* Ensure it stays above other elements */
-}
-
-.hamburger span {
-    display: block;
-    width: 30px;
-    height: 3px;
-    background-color: #fff;
-    margin: 6px 0;
-    transition: 0.4s;
-}
-
-/* For smaller screens, show the hamburger */
-@media (max-width: 768px) {
     .hamburger {
-        display: block;  /* Make it visible on mobile */
+        display: block;  /* Make hamburger visible on mobile */
+        cursor: pointer;
+        z-index: 1100;  /* Make sure it's above everything */
     }
 
-    .nav-links {
-        display: none;  /* Hide nav links by default on mobile */
-        flex-direction: column;
-        position: absolute;
-        top: 60px;  /* Position the links below the navbar */
-        right: 0;
-        background-color: #004080;
-        width: 100%;
-        text-align: center;
-        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+    .hamburger span {
+        display: block;
+        width: 30px;
+        height: 3px;
+        background-color: #fff;
+        margin: 6px 0;
+        transition: 0.4s;
     }
 
+    /* Show the hamburger menu when active */
     .nav-links.active {
-        display: flex;  /* Show the links when active */
+        display: flex;  /* Show links */
     }
-}
-
 }
 
 /* Active class to display nav links when hamburger is clicked */
